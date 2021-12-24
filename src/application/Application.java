@@ -67,8 +67,8 @@ final class Application {
 					String keyword = in.nextLine();
 					Toy t2 = myStore.searchProductByCode(keyword);
 					if (t2 == null) {
-						System.out.print("\t Không có sản phẩm cần tìm");
-						return;
+						System.out.println("\t Không có sản phẩm cần tìm");
+						break;
 					}
 					System.out.println(t2);
 					break;
@@ -77,7 +77,7 @@ final class Application {
 					List<Toy> list1 = myStore.orderByASC();
 					if (list1.isEmpty()) {
 						System.out.println("\t Danh sách rỗng!");
-						return;
+						break;
 					}
 
 					for (Toy t3 : list1) {
@@ -89,7 +89,7 @@ final class Application {
 					List<Toy> list2 = myStore.listExpiration();
 					if (list2.isEmpty()) {
 						System.out.println("\t Danh sách rỗng!");
-						return;
+						break;
 					}
 					for (Toy t4 : list2) {
 						System.out.println(t4);
