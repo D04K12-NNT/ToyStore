@@ -1,4 +1,4 @@
-# Mini project: Chương trình quản lý thông tin sản phẩm Toy Store
+# Mini project: Chương trình quản lý thông tin sản phẩm tại Toy Store
 # BKACAD: 24/12/2021
 
 Một cửa hàng bán đồ chơi đang gặp khó khăn trong vấn đề lưu trữ thông tin, trước đó cửa hàng chủ yếu lưu lại các hoá đơn nhập hàng.
