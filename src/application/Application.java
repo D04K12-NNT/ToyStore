@@ -22,7 +22,7 @@ final class Application {
 		Store myStore = new MyStore("MyStore");
 		Scanner in = new Scanner(System.in);
 		int option = -1;
-		while (option != THOAT) {
+		do {
 			try {
 				System.out.println("----------------Toy Store----------------");
 				System.out.println("1. Thêm sản phẩm");
@@ -63,16 +63,20 @@ final class Application {
 					break;
 
 				case TIM_KIEM_THEO_MA:
-					System.out.print("Nhập mã code sản phẩm: ");
+					System.out.print("\t Nhập mã code sản phẩm: ");
 					String keyword = in.nextLine();
 					Toy t2 = myStore.searchProductByCode(keyword);
+					if (t2 == null) {
+						System.out.print("\t Không có sản phẩm cần tìm");
+						return;
+					}
 					System.out.println(t2);
 					break;
 
 				case SAP_XEP_THEO_GIA_TANG_DAN:
 					List<Toy> list1 = myStore.orderByASC();
 					if (list1.isEmpty()) {
-						System.out.println("Danh sách rỗng");
+						System.out.println("\t Danh sách rỗng!");
 						return;
 					}
 
@@ -84,8 +88,8 @@ final class Application {
 				case SAN_PHAM_HET_HAN:
 					List<Toy> list2 = myStore.listExpiration();
 					if (list2.isEmpty()) {
-						System.out.println("Danh sách rỗng");
-						break;
+						System.out.println("\t Danh sách rỗng!");
+						return;
 					}
 					for (Toy t4 : list2) {
 						System.out.println(t4);
@@ -93,17 +97,19 @@ final class Application {
 					break;
 
 				case THOAT:
-					System.out.println("Thoát khỏi chương trình");
+					System.out.println("\t Thoát khỏi chương trình");
 					break;
 
 				default:
-					System.out.println("Lựa chọn không hợp lệ");
+					System.out.println("\t Lựa chọn không hợp lệ");
 					break;
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+		} while (option != THOAT);
+
+		// Đóng kết nối
 		try {
 			in.close();
 			DBHelper.getDefaultInstance().getConnection().close();
