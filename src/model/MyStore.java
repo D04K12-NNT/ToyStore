@@ -23,10 +23,13 @@ public class MyStore implements Store {
 	public void insertProduct(Toy item) throws Exception {
 		Connection conn = DBHelper.getDefaultInstance().getConnection();
 		Statement stmt = conn.createStatement();
+		
+		// Câu lệnh mẫu, chú ý thay thế your_table phù hợp
 		String sql = String.format(
-				"INSERT INTO toys(code, name, price, description, receiptDate) VALUES ('%s','%s','%f','%s','%s') ",
+				"INSERT INTO <your_table>(code, name, price, description, receiptDate) VALUES ('%s','%s','%f','%s','%s') ",
 				item.getCode(), item.getName(), item.getPrice(), item.getDescription(),
 				item.getReceiptDate().toString());
+		
 		stmt.executeUpdate(sql);
 		stmt.close();
 	}
@@ -35,7 +38,10 @@ public class MyStore implements Store {
 	public Toy searchProductByCode(String code) throws Exception {
 		Connection conn = DBHelper.getDefaultInstance().getConnection();
 		Statement stmt = conn.createStatement();
-		String sql = String.format("SELECT * FROM toys WHERE code = '%s'", code);
+		
+		// Thêm câu lệnh còn thiếu tại đây
+		String sql = "**************************************************";
+		
 		Toy item = null;
 		ResultSet rs = stmt.executeQuery(sql);
 		if (rs.next()) {
@@ -56,7 +62,9 @@ public class MyStore implements Store {
 	public List<Toy> orderByASC() throws Exception {
 		Connection conn = DBHelper.getDefaultInstance().getConnection();
 		Statement stmt = conn.createStatement();
-		String sql = "SELECT * FROM toys ORDER BY price ASC";
+		// Thêm câu lệnh còn thiếu tại đây
+		String sql = "**************************************************";
+		
 		ResultSet rs = stmt.executeQuery(sql);
 		List<Toy> list = new ArrayList<Toy>();
 		while (rs.next()) {
@@ -76,7 +84,9 @@ public class MyStore implements Store {
 	public List<Toy> listExpiration() throws Exception {
 		Connection conn = DBHelper.getDefaultInstance().getConnection();
 		Statement stmt = conn.createStatement();
-		String sql = "SELECT * FROM toys WHERE DATEDIFF(day,receiptDate,GETDATE()) > 365";
+		// Thêm câu lệnh còn thiếu tại đây
+		String sql = "**************************************************";
+		
 		ResultSet rs = stmt.executeQuery(sql);
 		List<Toy> list = new ArrayList<Toy>();
 		while (rs.next()) {
