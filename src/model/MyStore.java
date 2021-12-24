@@ -47,6 +47,8 @@ public class MyStore implements Store {
 			item.setDescription(rs.getNString("description"));
 			item.setReceiptDate(rs.getDate("receiptDate"));
 		}
+		rs.close();
+		stmt.close();
 		return item;
 	}
 
@@ -87,8 +89,10 @@ public class MyStore implements Store {
 			item.setReceiptDate(rs.getDate("receiptDate"));
 			list.add(item);
 		}
-		return list;
 
+		rs.close();
+		stmt.close();
+		return list;
 	}
 
 }

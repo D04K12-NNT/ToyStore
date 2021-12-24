@@ -71,6 +71,11 @@ final class Application {
 
 				case SAP_XEP_THEO_GIA_TANG_DAN:
 					List<Toy> list1 = myStore.orderByASC();
+					if (list1.isEmpty()) {
+						System.out.println("Danh sách rỗng");
+						return;
+					}
+
 					for (Toy t3 : list1) {
 						System.out.println(t3);
 					}
@@ -78,6 +83,10 @@ final class Application {
 
 				case SAN_PHAM_HET_HAN:
 					List<Toy> list2 = myStore.listExpiration();
+					if (list2.isEmpty()) {
+						System.out.println("Danh sách rỗng");
+						break;
+					}
 					for (Toy t4 : list2) {
 						System.out.println(t4);
 					}
