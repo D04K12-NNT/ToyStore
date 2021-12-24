@@ -2,17 +2,17 @@
 # BKACAD: 24/12/2021
 
 Một cửa hàng bán đồ chơi đang gặp khó khăn trong vấn đề lưu trữ thông tin, trước đó cửa hàng chủ yếu lưu lại các hoá đơn nhập hàng.
-Sau này khi số lượng tăng, việc tra cứu tìm kiếm thông tin về một mặt hàng gặp nhiều bất cập, sai sót.
+Sau này khi số lượng tăng, việc tra cứu tìm kiếm thông tin về một mặt hàng gặp nhiều khó khăn, bất cập, sai sót.
 
 Để giải quyết vấn đề đó chủ cửa hàng đã thuê một lập trình viên, viết một chương trình đơn giản, giải quyết nhu cầu lưu trữ, 
 truy xuất thông tin một sản phẩm một cách hiệu quả.
 
 Mỗi 1 sản phẩm bao gồm mã sản phẩm, tên sản phẩm, giá mua, mô tả sản phẩm và ngày nhập hàng.
 
-Với vai trò là một lập trình viên, hãy tứng bước phát triển chương trình.
+Với vai trò là một lập trình viên, hãy từng bước phát triển chương trình.
 
 Bước 1: Thiết kế và thử nghiệm CSDL
-- Hãy chọn hệ quản trị cơ dữ liệu sẽ áp dụng.
+- Hãy chọn hệ quản trị cơ dữ liệu sẽ áp dụng. (code mẫu sử dụng SQL Server, có thể sử dụng mySQL...)
 - Đặt tên cho cơ sở dữ liệu sẽ sử dụng.
 - Tạo bảng với các trường thông tin phù hợp (lưu ý các ràng buộc).
 - Bước thử nghiệm: thêm, sửa, xoá, truy vấn 1 vài thông tin, xác định câu lệnh sẽ dùng ở bước 2.
