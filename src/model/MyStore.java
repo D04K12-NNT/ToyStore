@@ -25,6 +25,7 @@ public class MyStore implements Store {
 		Statement stmt = conn.createStatement();
 		
 		// Câu lệnh mẫu, chú ý thay thế your_table phù hợp
+		// Lưu ý: xem phần tên cột có khớp không nhé, nếu ko khớp có thể điều chỉnh lại!
 		String sql = String.format(
 				"INSERT INTO <your_table>(code, name, price, description, receiptDate) VALUES ('%s','%s','%f','%s','%s') ",
 				item.getCode(), item.getName(), item.getPrice(), item.getDescription(),
