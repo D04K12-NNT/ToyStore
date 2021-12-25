@@ -109,7 +109,7 @@ final class Application {
 			}
 		} while (option != THOAT);
 
-		// Đóng kết nối
+		// Đóng kết nối đến CSDL
 		try {
 			in.close();
 			DBHelper.getDefaultInstance().getConnection().close();
