@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 // Design pattern: Singleton
+// Không sủa file này
 public final class DBHelper {
 
 	private static DBHelper instance = null;
