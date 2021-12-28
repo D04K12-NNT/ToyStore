@@ -25,7 +25,9 @@ Chương trình sau phải hiển thị MENU như sau:
    2. Tìm kiếm sản phẩm: theo mã hoặc theo tên.
    3. Sắp xếp sản phẩm theo giá tăng dần
    4. Lấy ra các sản phẩm đã quá hạn trên 1 năm.
-   5. Thoát
+   5. Tìm kiếm theo khoảng giá
+   --------------------------------------------
+   0. Thoát
 
 
 KEYWORD: JDBC (kết nối đến CSDL), ORDERBY (sắp xếp), các hàm xử lý về ngày tháng DATEDIFF, tìm kiếm sản phẩm thì có thể sử dụng từ khoá LIKE (gần đúng), hoặc = (Chính xác)
