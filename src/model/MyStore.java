@@ -27,7 +27,7 @@ public class MyStore implements Store {
 		// Câu lệnh mẫu, chú ý thay thế your_table phù hợp
 		// Lưu ý: xem phần tên cột có khớp không nhé, nếu ko khớp có thể điều chỉnh lại!
 		String sql = String.format(
-				"INSERT INTO <your_table>(code, name, price, description, receiptDate) VALUES ('%s','%s','%f','%s','%s') ",
+				"INSERT INTO toys VALUES ('%s','%s','%f','%s','%s') ",
 				item.getCode(), item.getName(), item.getPrice(), item.getDescription(),
 				item.getReceiptDate().toString());
 		
@@ -47,12 +47,12 @@ public class MyStore implements Store {
 		ResultSet rs = stmt.executeQuery(sql);
 		if (rs.next()) {
 			item = new Toy();
-			item.setId(rs.getLong("id"));
+//			item.setId(rs.getLong("id"));
 			item.setCode(rs.getString("code"));
 			item.setName(rs.getNString("name"));
 			item.setPrice(rs.getDouble("price"));
 			item.setDescription(rs.getNString("description"));
-			item.setReceiptDate(rs.getDate("receiptDate"));
+			item.setReceiptDate(rs.getDate("receiveDate"));
 		}
 		rs.close();
 		stmt.close();
@@ -64,18 +64,18 @@ public class MyStore implements Store {
 		Connection conn = DBHelper.getDefaultInstance().getConnection();
 		Statement stmt = conn.createStatement();
 		// Thêm câu lệnh còn thiếu tại đây
-		String sql = "**************************************************";
+		String sql = "SELECT * FROM toys";
 		
 		ResultSet rs = stmt.executeQuery(sql);
 		List<Toy> list = new ArrayList<Toy>();
 		while (rs.next()) {
 			Toy item = new Toy();
-			item.setId(rs.getLong("id"));
+//			item.setId(rs.getLong("id"));
 			item.setCode(rs.getString("code"));
 			item.setName(rs.getNString("name"));
 			item.setPrice(rs.getDouble("price"));
 			item.setDescription(rs.getNString("description"));
-			item.setReceiptDate(rs.getDate("receiptDate"));
+			item.setReceiptDate(rs.getDate("receiveDate"));
 			list.add(item);
 		}
 		return list;

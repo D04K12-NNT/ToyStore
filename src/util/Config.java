@@ -1,8 +1,8 @@
 package util;
 
 final class Config {
-	// Thêm cấu hình DB tại đây
+	// Thêm cấu hình 
 	static final String USER = "sa";
-	static final String PASSWORD = "your_password";
-	static final String DB_NAME = "your_db";
+	static final String PASSWORD = "Bkacad@123";
+	static final String DB_NAME = "Demo";
 }
